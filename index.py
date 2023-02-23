@@ -10,7 +10,11 @@ class human:
     
     def checkadult(self, age):
         if age<18:
-            print(f"grow up and come back later, {self.name}")
+            self.age = int(input(f"if you think this age = {age} is wrong, then enter your correct age: "))
+            while self.age<18:
+                self.age = int(input(f"i'm sorry, please enter an age greater than 18: "))
+            print(f"okay you can leave now, your age is now {self.age}")
+
         else:
             print(f"nice, you are perfectly ripe, {self.name}")
     
@@ -20,5 +24,6 @@ human2=human("meena", 17, 1.4, "lightish brown")
 
 # printing the sentence
 print(human1.speak("this is a good life"))
-print(human1.checkadult(human1.age))
+print(human2.checkadult(human2.age))
+print(human2.age)
 
